@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@media (prefers-color-scheme: dark) {
+  .container {
+    color: white;
+    background-color: black;
+  }
+}
+
+@theme {
+  /* 주요 색상 */
+  --color-flow-blue: #0052CC;
+  --color-flow-purple: #6554C0;
+
+  /* 보조 색상 */
+  --color-flow-teal: #36B37E;
+
+  /* 강조 색상 */
+  --color-flow-orange: #FF5630;
+  /* 회사 폰트 */
+  --font-noto-sans-kr: "Noto Sans KR", sans-serif;
+}
