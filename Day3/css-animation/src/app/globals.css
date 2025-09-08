@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+/* Chapter 4 - Card Animation => theme은 전역 css에 존재 */
+@theme {
+  --animate-appear: card-appear 0.5s ease-in-out;
+
+  @keyframes card-appear {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

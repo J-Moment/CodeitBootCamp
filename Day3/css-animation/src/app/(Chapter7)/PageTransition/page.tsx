@@ -1,0 +1,14 @@
+import Link from "next/link";
+import PageTransition from "./components/pagetransition";
+export default function Page() {
+  return (
+    <PageTransition>
+    <div>
+      <Link className="text-blue-500 underline" href="/PageTransition/about">
+        About으로
+      </Link>
+      {/* 코드 생략*/}
+    </div>
+    </PageTransition>
+  );
+}

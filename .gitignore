@@ -4,6 +4,12 @@ node_modules/
 /.pnp
 .pnp.js
 
+#files
+package-lock.json
+**/*.config.*
+package.json
+.gitignore
+
 # build output
 .next
 out
