@@ -1,10 +1,10 @@
 # .github/workflows/actions.yml
 
-# 이름 짓기
-name: Github Actions 연습하기
-# 언제 이 작업을 실행할지 정의
-# push: github에 push할 때마다 실행
-on: push
+name: Github Actions로 테스트 자동화하기
+on:
+  pull_request:        # PR 열리면 자동 실행
+  push:                # (선택) 브랜치에 push할 때도 실행
+  workflow_dispatch: 
 
 jobs:
   test:
