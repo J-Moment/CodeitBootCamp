@@ -1,7 +1,10 @@
 # .github/workflows/actions.yml
 
 name: Github Actions로 테스트 자동화하기
-on: workflow_dispatch
+on:
+  pull_request:        # PR 열리면 자동 실행
+  push:                # (선택) 브랜치에 push할 때도 실행
+  workflow_dispatch: 
 
 jobs:
   test:
