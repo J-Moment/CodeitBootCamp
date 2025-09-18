@@ -1,14 +1,17 @@
 #!/usr/bin/env sh
+set -e
+npm --prefix Day11/cicd run test:changed
 
-# Day11/cicd 디렉토리로 이동
-cd Day11/cicd || exit 0
+# Day11/cicd 하위에서 스테이징된 JS/TS만 추려서, 없으면 바로 통과
+STAGED="$(git diff --name-only --cached --diff-filter=ACMRTUXB | grep -E '^Day11/cicd/.*\.(js|jsx|ts|tsx)$' || true)"
 
-FILES=$(git diff --name-only --cached --diff-filter=ACMRTUXB | grep -E '^Day11/cicd/.*\.(js|jsx|ts|tsx)$' || true)
-
-if [ -z "$FILES" ]; then
+if [ -z "$STAGED" ]; then
   echo "No staged files in Day11/cicd. Skipping tests."
   exit 0
 fi
 
-echo "Running tests for staged files in Day11/cicd..."
-npx jest --findRelatedTests --passWithNoTests $FILES
+echo "Running tests in Day11/cicd for staged changes:"
+echo "$STAGED" | sed 's/^/  • /'
+
+# 하위 디렉토리의 npm 스크립트를 루트에서 실행
+npm --prefix Day11/cicd run test:changed

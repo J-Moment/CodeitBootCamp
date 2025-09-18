@@ -48,3 +48,4 @@ pnpm-debug.log*
 
 # Tailwind JIT cache
 .tailwindcache
+.vercel
