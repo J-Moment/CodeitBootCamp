@@ -5,7 +5,7 @@ export default function Home() {
   const b = 2;
   return (
     <div>
-      `${a} + ${b} = ${sum(a, b)}`
+      `{a} + {b} = {sum(a, b)}`
     </div>
   );
 }
