@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+# Day11/cicd 디렉토리로 이동
+cd Day11/cicd || exit 0
+
+FILES=$(git diff --name-only --cached --diff-filter=ACMRTUXB | grep -E '^Day11/cicd/.*\.(js|jsx|ts|tsx)$' || true)
+
+if [ -z "$FILES" ]; then
+  echo "No staged files in Day11/cicd. Skipping tests."
+  exit 0
+fi
+
+echo "Running tests for staged files in Day11/cicd..."
+npx jest --findRelatedTests --passWithNoTests $FILES
