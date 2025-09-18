@@ -11,8 +11,7 @@
     "test:watch": "jest --watch",
     "test:watchAll": "jest --watchAll",
     "test:changed": "jest --onlyChanged",
-    "test:coverage": "jest --coverage",
-    "prepare": "husky"
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "next": "15.5.3",

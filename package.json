@@ -2,6 +2,7 @@
   "name": "codeitbootcamp",
   "version": "1.0.0",
   "main": "index.js",
+  "devDependencies": { "husky": "^9" },
   "scripts": {
     "test": "echo \"Error: no test specified\"",
     "prepare": "husky"
